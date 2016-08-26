@@ -2,6 +2,7 @@
 
 using namespace std;
 using namespace cv;
+
 int main(int argc, char *argv[])
 {
 
@@ -21,4 +22,5 @@ int main(int argc, char *argv[])
 
     vector<pair<string, int>> scores = match(hash, hash_values);
 
+	return 0;
 }
