@@ -1,3 +1,4 @@
+import org.apache.tools.ant.taskdefs.condition.Os
 apply plugin: 'com.android.model.application'
 
 model {
@@ -19,26 +20,26 @@ model {
             }
         }
         ndk {
-            moduleName 'native'
+            moduleName 'scryingmirror_cpp'
             ldLibs.add('log')
             cppFlags.add('-std=c++11')
             cppFlags.add('-fexceptions')
             stl = 'gnustl_static'
         }
+    }
 
-        /*android.sources {
-            main {
-                jniLibs {
-                    source {
-                        srcDir 'src/main/libs'
-                    }
+    android.sources {
+        main {
+            jniLibs {
+                source {
+                    srcDir 'src/main/libs'
                 }
             }
-        }*/
+        }
     }
 }
 
-/*task ndkBuild(type: Exec) {
+task ndkBuild(type: Exec) {
     if (Os.isFamily(Os.FAMILY_WINDOWS)) {
         commandLine 'ndk-build.cmd', '-C', file('src/main').absolutePath
     } else {
@@ -71,7 +72,7 @@ tasks.all {
         if (task.name.endsWith('clean') ) {
             task.dependsOn ndkBuildClean
         }
-}*/
+}
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])

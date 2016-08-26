@@ -50,9 +50,12 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick (View view){
             int res = main_jni();
-            Snackbar.make(view, res, Snackbar.LENGTH_SHORT)
+            Snackbar.make(view, "" + res, Snackbar.LENGTH_SHORT)
                     .setAction("Action", null).show();
         }
     };
 
+    static {
+        System.loadLibrary("scryingmirror_cpp");
+    }
 }
