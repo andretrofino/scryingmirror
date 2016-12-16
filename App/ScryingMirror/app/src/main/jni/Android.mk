@@ -1,7 +1,7 @@
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
-SCRYING_MIRROR_MODULE_PATH := $(LOCAL_PATH)/../../../../../../Source
+SCRYING_MIRROR_MODULE_PATH := $(LOCAL_PATH)/../../../../../../Source/ScryingMirror/
 
 # OpenCV
 OPENCVROOT:= C:/Users/andre.trofino/Development/OpenCV-android-sdk
@@ -14,7 +14,7 @@ include ${OPENCVROOT}/sdk/native/jni/OpenCV.mk
 LOCAL_ARM_MODE := arm
 
 # Name of the local module
-LOCAL_MODULE    := scryingmirror_cpp
+LOCAL_MODULE    := scryingmirror_jni
 
 # The files that make up the source code
 LOCAL_SRC_FILES := mainactivity.cpp
